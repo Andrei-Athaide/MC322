@@ -1,4 +1,4 @@
-public abstract class Personagem{
+public abstract class Personagem implements Combatente{
     private String nome;
     private int pontosDeVida;
     private int forca;
@@ -43,8 +43,22 @@ public abstract class Personagem{
         this.arma = arma;
     }
 
+    public int estaVivo(){
+        if(pontosDeVida != 0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+
+
     public void receberDano(int dano){
         pontosDeVida = pontosDeVida - dano;
+    }
+
+    public void receberCura(int cura){
+        pontosDeVida = pontosDeVida + cura;
     }
 
     public void exibirStatus(){
@@ -52,5 +66,7 @@ public abstract class Personagem{
         System.out.println(nome + " tem " + forca + " pontos de força.");
     }
 
+    public abstract void escolherAcao(Combatente alvo);
+    
     public abstract void atacar(Personagem PersonagemAlvo);
 }
