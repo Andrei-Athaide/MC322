@@ -1,7 +1,8 @@
 
+import java.util.List;
 import java.util.Random;
 
-public abstract class Monstro extends Personagem{
+public abstract class Monstro extends Personagem implements Lootavel{
     int xpConcedido;
     Arma listaDeArmasParaLargar[];
 
@@ -37,4 +38,10 @@ public abstract class Monstro extends Personagem{
         int numArma = Aleatorizador.nextInt(6);
         return listaDeArmasParaLargar[numArma];
     }
+
+    public void droparLoot(){
+        
+    }
+
+    List<AcaoDeCombate> acoes;
 }

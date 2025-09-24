@@ -1,3 +1,5 @@
+import java.util.List;
+
 public abstract class Heroi extends Personagem{
     private int nivel;
     private int experiencia;
@@ -71,5 +73,7 @@ public abstract class Heroi extends Personagem{
     }
     
     public abstract void usarHabilidadeEspecial(Personagem PersonagemAlvo);
+
+    List<AcaoDeCombate> acoes;
 }
 
